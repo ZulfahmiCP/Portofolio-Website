@@ -1,0 +1,29 @@
+:root {
+  --dark-bg: #111317;
+  --light-bg: #F0F2D5;
+  --primary-accent: #76BA9D;
+  --secondary-accent: #76B5BA;
+  --glow-color: rgba(118, 186, 157, 0.5);
+  --secondary-glow-color: rgba(118, 181, 186, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --dark-text: #EAEAEA;
+  --light-text: #1a202c;
+  --card-bg: #1a1c20;
+
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --header-bg: rgba(17, 19, 23, 0.8);
+}
+
+.light-mode {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --header-bg: rgba(240, 242, 213, 0.8);
+}
