@@ -1,70 +1,42 @@
-import React, { useState } from 'react';
-import { Menu, Sun, Moon } from 'lucide-react';
-import './Header.css';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+import Nav from './Nav';
+import ThemeToggle from './ThemeToggle';
+import '../../styles/components/header.css';
 
-const Header = ({ toggleTheme, theme }) => {
-  const [mobileNavActive, setMobileNavActive] = useState(false);
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMobileNav = () => {
-    setMobileNavActive(!mobileNavActive);
-  };
-
-  const closeMobileNav = () => {
-    setMobileNavActive(false);
+    setMobileNavOpen(!mobileNavOpen);
   };
 
   return (
-    <header className="main-header">
+    <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <a href="#about" className="logo" onClick={closeMobileNav}>
+        <Link to="about" smooth={true} duration={500} className="logo">
           ZUL<span>FAHMI</span>
-        </a>
-        <div className="mobile-nav-toggle" onClick={toggleMobileNav}>
-          <Menu />
-        </div>
-        <nav className={`main-nav ${mobileNavActive ? 'active' : ''}`}>
-          <ul>
-            <li>
-              <a href="#about" className="nav-link" onClick={closeMobileNav}>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="nav-link" onClick={closeMobileNav}>
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#cp" className="nav-link" onClick={closeMobileNav}>
-                CP
-              </a>
-            </li>
-            <li>
-              <a href="#skills" className="nav-link" onClick={closeMobileNav}>
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="nav-link" onClick={closeMobileNav}>
-                Contact
-              </a>
-            </li>
-            <li>
-              <div className="theme-switch-wrapper">
-                <Sun size={16} style={{ marginRight: '5px' }} />
-                <label className="theme-switch">
-                  <input
-                    type="checkbox"
-                    checked={theme === 'dark-mode'}
-                    onChange={toggleTheme}
-                  />
-                  <div className="slider"></div>
-                </label>
-                <Moon size={16} style={{ marginLeft: '5px' }} />
-              </div>
-            </li>
-          </ul>
-        </nav>
+        </Link>
+        
+        <button 
+          className="mobile-nav-toggle" 
+          onClick={toggleMobileNav}
+          aria-label="Toggle navigation"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+        
+        <Nav mobileNavOpen={mobileNavOpen} toggleMobileNav={toggleMobileNav} />
+        <ThemeToggle />
       </div>
     </header>
   );

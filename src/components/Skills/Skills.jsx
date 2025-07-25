@@ -1,77 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { Code2, Code, Database, BarChart3, BrainCircuit, AreaChart, Bolt, Brain, BrainCog, Server, Atom } from 'lucide-react';
-import SkillCategory from './SkillCategory';
-import './Skills.css';
+import { useEffect } from 'react';
+import skillsData from '../../data/skills';
+import '../../styles/components/skills.css';
 
 const Skills = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const skillCategories = [
-    {
-      title: 'Languages',
-      icon: <Code2 />,
-      skills: [
-        { name: 'Python', icon: <Code2 /> },
-        { name: 'C++', icon: <Code2 /> },
-        { name: 'JavaScript', icon: <Code /> },
-        { name: 'SQL', icon: <Database /> }
-      ]
-    },
-    {
-      title: 'Data Tools',
-      icon: <BarChart3 />,
-      skills: [
-        { name: 'Pandas & NumPy', icon: <BarChart3 /> },
-        { name: 'Scikit-learn', icon: <BrainCircuit /> },
-        { name: 'Matplotlib & Seaborn', icon: <AreaChart /> },
-        { name: 'Spark', icon: <Bolt /> }
-      ]
-    },
-    {
-      title: 'Frameworks',
-      icon: <Brain />,
-      skills: [
-        { name: 'TensorFlow & Keras', icon: <Brain /> },
-        { name: 'PyTorch', icon: <BrainCog /> },
-        { name: 'Flask & Django', icon: <Server /> },
-        { name: 'React', icon: <Atom /> }
-      ]
-    }
-  ];
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('skills');
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
+    // Initialize Lucide icons
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   }, []);
 
   return (
-    <section 
-      id="skills" 
-      className={`scroll-section ${isVisible ? 'visible' : ''}`}
-    >
+    <section id="skills" className="scroll-section">
       <div className="container">
         <h2 className="section-title">Skills</h2>
         <div className="skills-container">
-          {skillCategories.map((category, index) => (
-            <SkillCategory 
-              key={index}
-              title={category.title}
-              icon={category.icon}
-              skills={category.skills}
-            />
+          {skillsData.map((category) => (
+            <div key={category.id} className="skill-category">
+              <h3>{category.name}</h3>
+              <ul className="skill-list">
+                {category.skills.map((skill, index) => (
+                  <li key={index}>
+                    <i data-lucide={skill.icon}></i>
+                    {skill.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>

@@ -1,59 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import './CompetitiveProgramming.css';
+import { useState } from 'react';
+import cpProblems from '../../data/cpProblems';
+import '../../styles/components/cp.css';
 
 const CompetitiveProgramming = () => {
   const [showTable, setShowTable] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
 
-  const cpProblems = [
-    {
-      contest: 'UniContest 2024',
-      problems: [
-        {
-          title: 'Graph Traversal Mania',
-          link: '#',
-          tags: ['Graphs', 'DFS', 'BFS']
-        },
-        // Add other problems similarly
-      ]
-    }
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('cp');
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
+  const toggleTable = () => {
+    setShowTable(!showTable);
+  };
 
   return (
-    <section 
-      id="cp" 
-      className={`scroll-section ${isVisible ? 'visible' : ''}`}
-    >
+    <section id="cp" className="scroll-section">
       <div className="container cp-container">
         <h2 className="section-title">Competitive Programming</h2>
         <p>
-          I am an active competitive programmer and have authored several problems 
-          for university-level and online contests. Below is a selection of problems I've designed.
+          I am an active competitive programmer and have authored several problems for university-level 
+          and online contests. Below is a selection of problems I've designed.
         </p>
         <button 
+          onClick={toggleTable}
           className="btn btn-primary"
-          onClick={() => setShowTable(!showTable)}
         >
           {showTable ? 'Hide Authored Problems' : 'Show Authored Problems'}
         </button>
+        
         {showTable && (
           <div id="cp-table-container">
             <table className="cp-table">
@@ -69,10 +39,14 @@ const CompetitiveProgramming = () => {
                   contest.problems.map((problem, pIndex) => (
                     <tr key={`${index}-${pIndex}`}>
                       {pIndex === 0 && (
-                        <td rowSpan={contest.problems.length}>{contest.contest}</td>
+                        <td rowSpan={contest.problems.length}>{contest.name}</td>
                       )}
                       <td>
-                        <a href={problem.link} target="_blank" rel="noopener noreferrer">
+                        <a 
+                          href={problem.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
                           {problem.title}
                         </a>
                       </td>

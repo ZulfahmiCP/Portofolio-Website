@@ -1,6 +1,7 @@
 :root {
+  /* Color Palette */
   --dark-bg: #111317;
-  --light-bg: #F0F2D5;
+  --light-bg: rgba(255, 255, 255, 0.7);
   --primary-accent: #76BA9D;
   --secondary-accent: #76B5BA;
   --glow-color: rgba(118, 186, 157, 0.5);
@@ -11,19 +12,22 @@
   --light-text: #1a202c;
   --card-bg: #1a1c20;
 
+  /* Typography */
   --font-heading: 'Orbitron', sans-serif;
   --font-body: 'Poppins', sans-serif;
 
+  /* Base Theme - Dark Mode */
   --bg-color: var(--dark-bg);
   --text-color: var(--dark-text);
   --header-bg: rgba(17, 19, 23, 0.8);
 }
 
-.light-mode {
+/* Light Mode Overrides */
+body.light-mode {
   --bg-color: var(--light-bg);
   --text-color: var(--light-text);
-  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(240, 242, 213, 0.8);
   --glass-bg: rgba(0, 0, 0, 0.05);
   --glass-border: rgba(0, 0, 0, 0.1);
-  --header-bg: rgba(240, 242, 213, 0.8);
+  --header-bg: rgba(255, 255, 255, 0.7);
 }

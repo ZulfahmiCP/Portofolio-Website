@@ -1,16 +1,23 @@
-import React from 'react';
-import { Mail, Linkedin, Github, Twitter } from 'lucide-react';
-import './Footer.css';
+import { useEffect } from 'react';
+import '../../styles/components/footer.css';
 
 const Footer = () => {
+  useEffect(() => {
+    // Initialize Lucide icons
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  }, []);
+
   return (
     <footer id="contact" className="main-footer">
       <div className="container footer-content">
         <h3>Get In Touch</h3>
         <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+        
         <div className="social-links">
           <a href="mailto:youremail@example.com" title="Email">
-            <Mail />
+            <i data-lucide="mail"></i>
           </a>
           <a 
             href="https://linkedin.com/in/your-username" 
@@ -18,7 +25,7 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="LinkedIn"
           >
-            <Linkedin />
+            <i data-lucide="linkedin"></i>
           </a>
           <a 
             href="https://github.com/your-username" 
@@ -26,7 +33,7 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="GitHub"
           >
-            <Github />
+            <i data-lucide="github"></i>
           </a>
           <a 
             href="https://twitter.com/your-username" 
@@ -34,9 +41,10 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="Twitter"
           >
-            <Twitter />
+            <i data-lucide="twitter"></i>
           </a>
         </div>
+        
         <p className="copyright">
           © {new Date().getFullYear()} ZULFAHMI. Designed with a futuristic touch.
         </p>

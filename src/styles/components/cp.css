@@ -1,0 +1,110 @@
+/* Competitive Programming Section */
+.cp-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#cp p {
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+#cp-table-container {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+.cp-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.cp-table th, 
+.cp-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--glass-border);
+  vertical-align: middle;
+}
+
+.cp-table td:first-child {
+  font-weight: 600;
+}
+
+.cp-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cp-table th {
+  font-family: var(--font-heading);
+  color: var(--primary-accent);
+}
+
+.cp-table a {
+  color: var(--secondary-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cp-table a:hover {
+  text-decoration: underline;
+  color: var(--primary-accent);
+}
+
+.cp-table .tag {
+  font-size: 0.8rem;
+  background: var(--glass-bg);
+  padding: 4px 8px;
+  border-radius: 10px;
+  margin-right: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .cp-table {
+    display: block;
+    width: 100%;
+  }
+  
+  .cp-table thead {
+    display: none;
+  }
+  
+  .cp-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--glass-border);
+  }
+  
+  .cp-table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px dotted var(--glass-border);
+  }
+  
+  .cp-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .cp-table td:first-child {
+    font-weight: bold;
+    background: rgba(118, 181, 186, 0.1);
+  }
+}
