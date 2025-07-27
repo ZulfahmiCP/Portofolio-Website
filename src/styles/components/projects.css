@@ -124,12 +124,9 @@
 .filter-btn.active {
   background: var(--primary-gradient);
   border-color: transparent;
-  /* box-shadow: 0 0 15px var(--glow-color); */
   transform: translateY(-2px);
-}
-
-.filter-btn.active {
-  color: var(--bg-color);
+  background-size: 200% auto;
+  background-position: center;
 }
 
 /* Light Mode Adjustments */
@@ -137,8 +134,9 @@
   color: var(--text-color);
 }
 
+.light-mode .filter-btn:hover,
 .light-mode .filter-btn.active {
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Responsive Design */

@@ -4,13 +4,14 @@
     rgba(118, 186, 157, 1) 0%, 
     rgba(87, 199, 133, 1) 50%, 
     rgba(118, 181, 186, 1) 100%);
+  --primary-accent: rgba(43, 245, 152);
+  --secondary-accent: rgba(7, 174, 234);
+  --primary-gradient: linear-gradient(90deg, var(--primary-accent) 0.000%, var(--secondary-accent) 100.000%);
   
-  --primary-accent: #76BA9D; 
-  --secondary-accent: #76B5BA;
   
   /* Update glow effects to use first gradient color */
-  --glow-color: rgba(118, 186, 157, 0.5);
-  --secondary-glow-color: rgba(118, 181, 186, 0.4);
+  --glow-color: rgba(43, 245, 152, 0.4);
+  --secondary-glow-color: rgba(7, 174, 234, 0.5);
   
   /* Rest of your variables remain the same */
   --dark-bg: #111317;
