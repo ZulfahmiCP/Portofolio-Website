@@ -15,10 +15,9 @@ const ProjectCard = ({ project }) => {
       <div className="project-info">
         <h3>{project.title}</h3>
         <div className="project-description">
-          <p><strong>Problem:</strong> {project.problem}</p>
-          <p><strong>Solution:</strong> {project.solution}</p>
+          <p>{project.problem}</p>
+          <p>{project.solution}</p>
           <p>
-            <strong>Impact:</strong> 
             <span className="impact-highlight"> {project.impact}</span>
           </p>
         </div>

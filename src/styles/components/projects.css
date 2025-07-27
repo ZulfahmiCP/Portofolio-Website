@@ -57,7 +57,7 @@
 }
 
 .impact-highlight {
-  color: var(--primary-accent);
+  color: var(--secondary-accent);
   font-weight: 600;
   text-shadow: 0 0 8px var(--glow-color);
 }
