@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <Link to="about" smooth={true} duration={500} className="logo">
+        <Link to="about" smooth={true} duration={100} className="logo">
           ZUL<span>FAHMI</span>
         </Link>
         
