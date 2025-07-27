@@ -26,7 +26,8 @@
 body.light-mode {
   --bg-color: var(--light-bg);
   --text-color: var(--light-text);
-  --card-bg: rgba(240, 242, 213, 0.8);
+  /* --card-bg: rgba(240, 242, 213, 0.8); */
+  --card-bg: #F7F7F7;
   --glass-bg: rgba(0, 0, 0, 0.05);
   --glass-border: rgba(0, 0, 0, 0.1);
   --header-bg: rgba(255, 255, 255, 0.7);

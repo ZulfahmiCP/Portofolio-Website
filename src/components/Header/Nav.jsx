@@ -17,7 +17,7 @@ const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
           <Link 
             to="about" 
             smooth={true} 
-            duration={500} 
+            duration={100} 
             className="nav-link" 
             onClick={toggleMobileNav}
           >
@@ -28,7 +28,7 @@ const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
           <Link 
             to="projects" 
             smooth={true} 
-            duration={500} 
+            duration={100} 
             className="nav-link" 
             onClick={toggleMobileNav}
           >
@@ -39,7 +39,7 @@ const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
           <Link 
             to="cp" 
             smooth={true} 
-            duration={500} 
+            duration={100} 
             className="nav-link" 
             onClick={toggleMobileNav}
           >
@@ -50,7 +50,7 @@ const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
           <Link 
             to="skills" 
             smooth={true} 
-            duration={500} 
+            duration={100} 
             className="nav-link" 
             onClick={toggleMobileNav}
           >
@@ -61,7 +61,7 @@ const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
           <Link 
             to="contact" 
             smooth={true} 
-            duration={500} 
+            duration={100} 
             className="nav-link" 
             onClick={toggleMobileNav}
           >

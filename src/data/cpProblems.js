@@ -1,49 +1,84 @@
 const cpProblems = [
   {
-    name: "UniContest 2024",
+    name: "Recursion 1.0 Qualification",
     problems: [
       {
-        title: "Graph Traversal Mania",
-        link: "#",
-        tags: ["Graphs", "DFS", "BFS"]
+        title: "Angsa Ganas",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/A",
+        tags: ["data structure", "string"]
       },
       {
-        title: "Array Partitioning",
-        link: "#",
-        tags: ["Arrays", "Greedy"]
+        title: "Bus Trans Mamminasata",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/B",
+        tags: ["segment tree", "dynamic programming"]
       },
       {
-        title: "String Matching Fun",
-        link: "#",
-        tags: ["Strings", "KMP"]
+        title: "Dua Empa",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/D",
+        tags: ["brute force"]
+      },
+      {
+        title: "Empang Ternak Lele",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/E",
+        tags: ["dynamic programming", "bitmask"]
+      },
+      {
+        title: "Federasi Desa Kucing",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/F",
+        tags: ["data structure", "binary search"]
+      },
+      {
+        title: "Game Squirtle",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/G",
+        tags: ["dsu", "math"]
+      },
+      {
+        title: "Jualan Takjil",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan/J",
+        tags: ["segment tree"]
       }
     ]
   },
   {
-    name: "Code-Off Finals",
+    name: "Recursion 1.0 Final",
     problems: [
       {
-        title: "Dynamic Programming Quest",
-        link: "#",
-        tags: ["DP", "Optimization"]
+        title: "Anomali",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/A",
+        tags: ["dynamic programming", "combinatorics", "tree", "number theory"]
+      },
+      {
+        title: "Ciro dan Roti",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/C",
+        tags: ["dynamic programming", "hashing"]
+      },
+      {
+        title: "Es Pisang Ijo",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/E",
+        tags: ["dynamic programming", "number theory"]
+      },
+      {
+        title: "FT Unhas 09",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/F",
+        tags: ["segment tree", "heavy light decomposition"]
+      },
+      {
+        title: "Gado Gado",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/G",
+        tags: ["dynamic programming", "matrix exponentiation"]
+      },
+      {
+        title: "Indomi Soto",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/I",
+        tags: ["treap"]
+      }, 
+      {
+        title: "Lembaga Desa Kucing",
+        link: "https://tlx.toki.id/problems/recursion-1-cp-final/L",
+        tags: ["segment tree"]
       }
     ]
   },
-  {
-    name: "Summer Challenge '23",
-    problems: [
-      {
-        title: "Segment Tree Shenanigans",
-        link: "#",
-        tags: ["Data Structures", "Segment Tree"]
-      },
-      {
-        title: "Combinatorics Puzzle",
-        link: "#",
-        tags: ["Math", "Combinatorics"]
-      }
-    ]
-  }
 ];
 
 export default cpProblems;

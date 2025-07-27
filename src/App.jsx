@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
-import CompetitiveProgramming from './components/CompetitiveProgramming/CompetitiveProgramming';
+import CP from './components/CP/CP';
 import Skills from './components/Skills/Skills';
 import Footer from './components/Footer/Footer';
 import useScrollAnimation from './hooks/useScrollAnimation';
@@ -29,7 +29,7 @@ const App = () => {
       <main>
         <About />
         <Projects />
-        <CompetitiveProgramming />
+        <CP />
         <Skills />
       </main>
       
