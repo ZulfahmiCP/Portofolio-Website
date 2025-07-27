@@ -17,18 +17,6 @@
   flex-direction: column;
 }
 
-/* .project-card:hover {
-  border-color: transparent;
-  background: linear-gradient(
-    var(--card-bg), 
-    var(--card-bg)
-  ), 
-  var(--primary-gradient);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 20px var(--secondary-glow-color);
-} */
-
 .project-card img {
   width: 100%;
   height: 200px;
@@ -45,7 +33,7 @@
 .project-info h3 {
   font-family: var(--font-heading);
   margin-bottom: 15px;
-  color: var(--primary-accent);
+  color: var(--text-color);
 }
 
 .project-description {
@@ -123,32 +111,34 @@
   background: transparent;
   border: 2px solid var(--glass-border);
   color: var(--text-color);
-  padding: 10px 24px; /* Increased padding for larger size */
-  margin: 0; /* Remove default margins */
-  border-radius: 20px; /* Slightly rounded corners */
+  padding: 10px 24px; 
+  margin: 0; 
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem; /* Increase font size if needed */
+  font-size: 1rem; 
   font-weight: 500;
 }
 
 .filter-btn:hover, 
 .filter-btn.active {
   background: var(--primary-gradient);
-  color: var(--dark-bg);
   border-color: transparent;
   box-shadow: 0 0 15px var(--glow-color);
   transform: translateY(-2px);
 }
 
-/* Light Mode Adjustments */
-.light-mode .filter-btn {
-  color: var(--light-text);
+.filter-btn.active {
+  color: var(--bg-color);
 }
 
-.light-mode .filter-btn:hover,
+/* Light Mode Adjustments */
+.light-mode .filter-btn {
+  color: var(--text-color);
+}
+
 .light-mode .filter-btn.active {
-  color: var(--dark-text);
+  color: var(--bg-color);
 }
 
 /* Responsive Design */

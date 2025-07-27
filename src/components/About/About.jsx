@@ -26,15 +26,10 @@ const About = () => {
               innovative and impactful solutions.
             </p>
             <div className="about-actions">
-              <a href="#" className="about-button">
+              <a href="#" className="button-primary">
                 Download CV
               </a>
-              <a 
-                href="https://github.com/your-username" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="about-button"
-              >
+              <a href="https://github.com/ZulfahmiCP" className="button-primary">
                 Visit GitHub
               </a>
             </div>

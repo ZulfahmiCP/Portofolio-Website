@@ -19,7 +19,7 @@ const ThemeToggle = () => {
       if (window.lucide) {
         window.lucide.createIcons();
       }
-    }, 100);
+    }, 10);
     
     return () => clearTimeout(timer);
   }, []);

@@ -64,46 +64,6 @@
   gap: 20px;
 }
 
-.about-button {
-  padding: 12px 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-  border: none;
-  background: transparent;
-  color: var(--text-color);
-}
-
-.about-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid transparent;
-  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-              var(--primary-gradient) border-box;
-  z-index: -1;
-}
-
-.about-button:hover {
-  color: white;
-}
-
-.about-button:hover::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--primary-gradient);
-  z-index: -1;
-}
-
 /* Light Mode Adjustments */
 .light-mode .about-container {
   background: var(--card-bg);

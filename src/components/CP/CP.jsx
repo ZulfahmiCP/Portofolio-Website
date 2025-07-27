@@ -19,7 +19,7 @@ const CompetitiveProgramming = () => {
           </p>
           <button 
             onClick={() => setShowTable(!showTable)} 
-            className="cp-toggle-button"
+            className="button-primary"
           >
             {showTable ? 'Hide Authored Problems' : 'Show Authored Problems'}
           </button>
