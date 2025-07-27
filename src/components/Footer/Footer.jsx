@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="main-footer">
       <div className="container footer-content">
-        <h3>Get In Touch</h3>
+        <h3 className="footer-title">Get In Touch</h3>
         <p>Feel free to reach out for collaborations or just a friendly chat!</p>
         
         <div className="social-links">

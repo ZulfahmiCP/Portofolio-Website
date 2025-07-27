@@ -19,7 +19,9 @@ const About = () => {
         <div className="about-content">
           <h1>ZULFAHMI</h1>
           <p className="tagline">
-            <span id="typing-effect">{typedText}</span>
+            <span className="primary-text">Data Scientist</span>
+            <span className="separator"> & </span>
+            <span className="secondary-text">Competitive Programmer</span>
           </p>
           <p>
             A passionate university student pursuing Informatics Engineering at Hasanuddin University. 
@@ -37,7 +39,7 @@ const About = () => {
               rel="noopener noreferrer" 
               className="btn btn-secondary"
             >
-              Visit GitHub
+             <span>Visit GitHub</span>
             </a>
           </div>
         </div>

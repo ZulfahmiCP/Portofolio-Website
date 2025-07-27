@@ -7,6 +7,13 @@
   transition: background-color 0.3s ease;
 }
 
+.footer-title {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .footer-content h3 {
   font-family: var(--font-heading);
   font-size: 1.8rem;

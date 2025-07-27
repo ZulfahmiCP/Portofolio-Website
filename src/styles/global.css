@@ -46,12 +46,7 @@ section {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
-  color: var(--primary-accent);
-  text-shadow: 0 0 10px var(--glow-color);
-}
-
-.section-title {
-  background: linear-gradient(90deg, rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -72,26 +67,90 @@ section {
 }
 
 .btn-primary {
-  background-color: var(--primary-accent);
+  background: var(--primary-gradient);
   color: var(--dark-bg);
   box-shadow: 0 0 15px var(--glow-color);
+  border: none;
+  background-size: 200% auto;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: transparent;
-  color: var(--primary-accent);
+  background-position: right center;
   box-shadow: 0 0 25px var(--glow-color), 0 0 15px var(--secondary-glow-color);
+  color: var(--dark-bg);
 }
 
 .btn-secondary {
-  background-color: transparent;
+  position: relative;
+  background: transparent;
   color: var(--primary-accent);
+  border: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: var(--secondary-gradient-border) border-box;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-accent);
+  background: transparent;
+  color: white;
+}
+
+.btn-secondary:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--secondary-gradient-border);
+  z-index: -1;
+  border-radius: 50px;
+  opacity: 0.2;
+}
+
+/* For text gradient on hover */
+.btn-secondary span {
+  background: var(--secondary-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover span {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.light-mode .btn-secondary {
+  background: transparent;
+}
+
+.light-mode .btn-secondary:hover {
   color: var(--dark-bg);
-  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.light-mode .btn-secondary span {
+  background: var(--secondary-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* Tag Styles */

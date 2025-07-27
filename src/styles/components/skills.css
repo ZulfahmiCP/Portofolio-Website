@@ -18,7 +18,14 @@
 
 .skill-category:hover {
   transform: scale(1.05);
-  border-color: var(--secondary-accent);
+  border-color: transparent;
+  background: linear-gradient(
+    var(--card-bg), 
+    var(--card-bg)
+  ), 
+  var(--primary-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .skill-category h3 {

@@ -1,23 +1,38 @@
 :root {
-  /* Color Palette */
-  --dark-bg: #111317;
-  --light-bg: rgba(255, 255, 255, 0.7);
-  --gradient: linear-gradient(90deg,rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
-  --primary-accent: #76BA9D;
+  /* Update your color variables */
+  --primary-gradient: linear-gradient(90deg, 
+    rgba(118, 186, 157, 1) 0%, 
+    rgba(87, 199, 133, 1) 50%, 
+    rgba(118, 181, 186, 1) 100%);
+  /* --primary-gradient: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%); */
+
+    --secondary-gradient-border: linear-gradient(90deg, 
+    rgba(118, 186, 157, 1) 0%, 
+    rgba(87, 199, 133, 1) 50%, 
+    rgba(118, 181, 186, 1) 100%);
+  
+  --secondary-gradient-text: linear-gradient(90deg, 
+    rgba(118, 186, 157, 1) 0%, 
+    rgba(87, 199, 133, 1) 50%, 
+    rgba(118, 181, 186, 1) 100%);
+  
+  --primary-accent: #76BA9D; 
   --secondary-accent: #76B5BA;
+  
+  /* Update glow effects to use first gradient color */
   --glow-color: rgba(118, 186, 157, 0.5);
   --secondary-glow-color: rgba(118, 181, 186, 0.4);
+  
+  /* Rest of your variables remain the same */
+  --dark-bg: #111317;
+  --light-bg: rgba(255, 255, 255, 0.7);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --dark-text: #EAEAEA;
   --light-text: #1a202c;
   --card-bg: #1a1c20;
-
-  /* Typography */
   --font-heading: 'Orbitron', sans-serif;
   --font-body: 'Poppins', sans-serif;
-
-  /* Base Theme - Dark Mode */
   --bg-color: var(--dark-bg);
   --text-color: var(--dark-text);
   --header-bg: rgba(17, 19, 23, 0.8);
