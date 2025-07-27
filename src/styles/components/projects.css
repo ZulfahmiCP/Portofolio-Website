@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.project-card:hover {
+/* .project-card:hover {
   border-color: transparent;
   background: linear-gradient(
     var(--card-bg), 
@@ -27,7 +27,7 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 20px var(--secondary-glow-color);
-}
+} */
 
 .project-card img {
   width: 100%;
@@ -100,47 +100,219 @@
   color: var(--primary-accent);
 }
 
+/* Projects Filters */
+
+/* Filter Container */
+.projects-filter-container {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: left; /* Align container content left */
+}
+
+/* Filter Buttons */
 .project-filters {
-  text-align: center;
-  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start; /* Left alignment */
+  margin-bottom: 30px;
 }
 
 .filter-btn {
   background: transparent;
-  border: 1px solid var(--glass-border);
+  border: 2px solid var(--glass-border);
   color: var(--text-color);
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
+  padding: 10px 24px; /* Increased padding for larger size */
+  margin: 0; /* Remove default margins */
+  border-radius: 20px; /* Slightly rounded corners */
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 1rem; /* Increase font size if needed */
+  font-weight: 500;
 }
 
 .filter-btn:hover, 
 .filter-btn.active {
-  background: var(--primary-accent);
+  background: var(--primary-gradient);
   color: var(--dark-bg);
-  border-color: var(--primary-accent);
-  box-shadow: 0 0 10px var(--glow-color);
+  border-color: transparent;
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: translateY(-2px);
 }
 
-.show-more-container {
-  text-align: center;
-  margin-top: 60px;
+/* Light Mode Adjustments */
+.light-mode .filter-btn {
+  color: var(--light-text);
 }
 
-#show-more-projects-btn.sticky {
-  position: sticky;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 500;
+.light-mode .filter-btn:hover,
+.light-mode .filter-btn.active {
+  color: var(--dark-text);
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .project-filters {
+    gap: 10px;
+  }
+  
+  .filter-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Project Links Container */
+.project-links {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start; /* Left alignment */
+  margin-top: 20px;
+}
+
+/* Project Link Button */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--text-color);
+  text-decoration: none;
+  border: 2px solid var(--glass-border);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.project-link i {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hover Effects */
+.project-link:hover {
+  border-color: var(--primary-accent);
+  background: linear-gradient(
+    var(--card-bg), 
+    var(--card-bg)
+  ), 
+  var(--primary-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: white;
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+/* Light Mode Adjustments */
+.light-mode .project-link {
+  color: var(--light-text);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .project-link:hover {
+  color: var(--dark-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .project-link {
+    width: fit-content;
+  }
+}
+
+/* Show More Button */
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 30px;
+  width: 100%
+}
+
+.show-more-button {
+  padding: 12px 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.show-more-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+              var(--primary-gradient) border-box;
+  z-index: -1;
+  border-radius: 0; /* Remove border radius */
+}
+
+.show-more-button:hover {
+  color: white;
+}
+
+.show-more-button:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  z-index: -1;
+}
+
+/* Sticky state */
+.show-more-button.sticky {
+  position: sticky;
+  bottom: 20px;
+  /* Remove left/transform properties to allow flex centering */
+  margin: 20px auto; /* Center with auto margins */
+}
+
+/* Light mode adjustments */
+.light-mode .show-more-button {
+  color: var(--light-text);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .show-more-container {
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .show-more-button {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .show-more-button.sticky {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    width: 90%;
+    max-width: 200px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }

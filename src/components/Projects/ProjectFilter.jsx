@@ -9,7 +9,8 @@ const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
   ];
 
   return (
-    <div className="project-filters">
+    <div className="projects-filter-container">
+       <div className="project-filters">
       {filters.map((filter) => (
         <button
           key={filter.id}
@@ -20,6 +21,7 @@ const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
           {filter.label}
         </button>
       ))}
+    </div>
     </div>
   );
 };

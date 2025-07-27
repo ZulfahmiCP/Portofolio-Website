@@ -11,23 +11,23 @@ const CompetitiveProgramming = () => {
 
   return (
     <section id="cp" className="scroll-section">
-      <div className="container cp-container">
-        <h2 className="section-title">Competitive Programming</h2>
-        <p>
-          I am an active competitive programmer and have authored several problems for university-level 
-          and online contests. Below is a selection of problems I've designed.
-        </p>
-        <button 
-          onClick={toggleTable}
-          className="btn btn-primary"
-        >
-          {showTable ? 'Hide Authored Problems' : 'Show Authored Problems'}
-        </button>
-        
-        {showTable && (
-          <div id="cp-table-container">
-            <table className="cp-table">
-              <thead>
+      <div className="cp-container">
+        <div className="cp-content">
+          <h2 className="section-title">Competitive Programming</h2>
+          <p className="cp-description">
+            I am an active competitive programmer and have authored several problems for university-level and online contests. Below is a selection of problems I've designed.
+          </p>
+          <button 
+            onClick={() => setShowTable(!showTable)} 
+            className="cp-toggle-button"
+          >
+            {showTable ? 'Hide Authored Problems' : 'Show Authored Problems'}
+          </button>
+          
+          {showTable && (
+            <div className="cp-table-container">
+              <table className="cp-table">
+                <thead>
                 <tr>
                   <th>Contest</th>
                   <th>Problem</th>
@@ -39,16 +39,12 @@ const CompetitiveProgramming = () => {
                   contest.problems.map((problem, pIndex) => (
                     <tr key={`${index}-${pIndex}`}>
                       {pIndex === 0 && (
-                        <td rowSpan={contest.problems.length}>{contest.name}</td>
+                        <td rowSpan={contest.problems.length} data-label="Contest">
+                          <a href={contest.link} className="cp-link">{contest.name}</a>
+                        </td>
                       )}
                       <td>
-                        <a 
-                          href={problem.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                        >
-                          {problem.title}
-                        </a>
+                        <a href={problem.link} className="cp-link">{problem.title}</a>
                       </td>
                       <td>
                         {problem.tags.map((tag, tIndex) => (
@@ -59,9 +55,10 @@ const CompetitiveProgramming = () => {
                   ))
                 ))}
               </tbody>
-            </table>
-          </div>
-        )}
+              </table>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

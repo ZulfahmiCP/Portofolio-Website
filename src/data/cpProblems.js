@@ -1,6 +1,7 @@
 const cpProblems = [
   {
     name: "Recursion 1.0 Qualification",
+    link: "https://tlx.toki.id/problems/recursion-1-cp-penyisihan",
     problems: [
       {
         title: "Angsa Ganas",
@@ -41,6 +42,7 @@ const cpProblems = [
   },
   {
     name: "Recursion 1.0 Final",
+    link: "https://tlx.toki.id/problems/recursion-1-cp-final",
     problems: [
       {
         title: "Anomali",

@@ -41,16 +41,46 @@ section {
   transform: translateY(0);
 }
 
+/* Section Styles */
+
 .section-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
+  color: var(--text-color); /* Use theme text color */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* Space for underline */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
   background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: none;
+  border-radius: 2px;
+  width: 100%;
+}
+
+/* Light mode adjustments */
+.light-mode .section-title {
+  color: var(--light-text);
+}
+
+/* Optional: Add animation */
+.section-title::after {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Button Styles */
@@ -172,5 +202,12 @@ section {
   .section-title {
     font-size: 2rem;
     margin-bottom: 40px;
+    padding-bottom: 8px;
+  }
+  
+  .section-title::after {
+    height: 3px;
+    width: 70%;
+    left: 15%;
   }
 }

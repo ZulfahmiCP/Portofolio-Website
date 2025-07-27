@@ -41,7 +41,7 @@ const Projects = () => {
           <div className="show-more-container">
             <button 
               onClick={toggleShowMore}
-              className={`btn btn-primary ${isExpanded ? 'sticky' : ''}`}
+              className={`show-more-button ${isExpanded ? 'sticky' : ''}`}
             >
               {isExpanded ? 'Show Less' : 'Show More'}
             </button>
