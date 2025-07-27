@@ -50,6 +50,14 @@ section {
   text-shadow: 0 0 10px var(--glow-color);
 }
 
+.section-title {
+  background: linear-gradient(90deg, rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
 /* Button Styles */
 .btn {
   display: inline-block;

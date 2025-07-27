@@ -32,7 +32,7 @@ const About = () => {
               Download CV
             </a>
             <a 
-              href="https://github.com/your-username" 
+              href="https://github.com/ZulfahmiCP" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn btn-secondary"

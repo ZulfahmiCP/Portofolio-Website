@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import Nav from './Nav';
 import ThemeToggle from './ThemeToggle';
 import '../../styles/components/header.css';
@@ -23,9 +23,9 @@ const Header = () => {
   return (
     <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <Link to="about" smooth={true} duration={100} className="logo">
+        <ScrollLink to="about" smooth={true} duration={100} className="logo">
           ZUL<span>FAHMI</span>
-        </Link>
+        </ScrollLink>
         
         <button 
           className="mobile-nav-toggle" 

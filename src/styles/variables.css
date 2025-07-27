@@ -2,6 +2,7 @@
   /* Color Palette */
   --dark-bg: #111317;
   --light-bg: rgba(255, 255, 255, 0.7);
+  --gradient: linear-gradient(90deg,rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
   --primary-accent: #76BA9D;
   --secondary-accent: #76B5BA;
   --glow-color: rgba(118, 186, 157, 0.5);
@@ -26,7 +27,6 @@
 body.light-mode {
   --bg-color: var(--light-bg);
   --text-color: var(--light-text);
-  /* --card-bg: rgba(240, 242, 213, 0.8); */
   --card-bg: #F7F7F7;
   --glass-bg: rgba(0, 0, 0, 0.05);
   --glass-border: rgba(0, 0, 0, 0.1);

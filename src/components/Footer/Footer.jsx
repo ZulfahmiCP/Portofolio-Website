@@ -16,11 +16,11 @@ const Footer = () => {
         <p>Feel free to reach out for collaborations or just a friendly chat!</p>
         
         <div className="social-links">
-          <a href="mailto:youremail@example.com" title="Email">
+          <a href="mailto:zulfahmi1612@gmail.com" title="Email">
             <i data-lucide="mail"></i>
           </a>
           <a 
-            href="https://linkedin.com/in/your-username" 
+            href="https://www.linkedin.com/in/zul-fahmi-75b37828b" 
             target="_blank" 
             rel="noopener noreferrer" 
             title="LinkedIn"
@@ -28,7 +28,7 @@ const Footer = () => {
             <i data-lucide="linkedin"></i>
           </a>
           <a 
-            href="https://github.com/your-username" 
+            href="https://github.com/ZulfahmiCP" 
             target="_blank" 
             rel="noopener noreferrer" 
             title="GitHub"
@@ -36,12 +36,12 @@ const Footer = () => {
             <i data-lucide="github"></i>
           </a>
           <a 
-            href="https://twitter.com/your-username" 
+            href="http://wa.me/+6282239635621" 
             target="_blank" 
             rel="noopener noreferrer" 
-            title="Twitter"
+            title="WhatsApp"
           >
-            <i data-lucide="twitter"></i>
+            <i data-lucide="phone"></i>
           </a>
         </div>
         

@@ -13,6 +13,7 @@
 }
 
 .main-header .container {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,6 +45,8 @@
   font-weight: 400;
   position: relative;
   transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 5px 0;
 }
 
 .main-nav a::after {
@@ -63,26 +66,58 @@
   color: var(--primary-accent);
 }
 
+.main-nav a.active {
+  background: linear-gradient(90deg, rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .main-nav a:hover::after,
 .main-nav a.active::after {
   width: 100%;
 }
 
-.theme-switch-wrapper {
+.theme-toggle-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.theme-switch {
-  display: inline-block;
-  height: 24px;
-  position: relative;
-  width: 48px;
-  margin-left: 10px;
+.icon-container {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--glass-bg);
+  transition: all 0.3s ease;
 }
 
-.theme-switch input {
-  display: none;
+.theme-toggle-button:hover .icon-container {
+  background-color: var(--primary-accent);
+  transform: scale(1.05);
+}
+
+.theme-toggle-button:hover .theme-icon {
+  color: var(--dark-bg);
+}
+
+.theme-icon {
+  color: var(--text-color);
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Ensure icons are properly aligned */
+.theme-icon svg {
+  display: block;
 }
 
 .slider {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react'; // Import specific icons
 import '../../styles/components/header.css';
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // Initialize theme from localStorage or prefer-color-scheme
     const savedTheme = localStorage.getItem('theme') || 
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode');
     
@@ -21,19 +21,19 @@ const ThemeToggle = () => {
   };
 
   return (
-    <div className="theme-switch-wrapper">
-      <i data-lucide="sun" style={{ marginRight: '5px' }}></i>
-      <label className="theme-switch">
-        <input 
-          type="checkbox" 
-          checked={darkMode}
-          onChange={toggleTheme}
-          aria-label="Toggle dark mode"
-        />
-        <div className="slider"></div>
-      </label>
-      <i data-lucide="moon" style={{ marginLeft: '5px' }}></i>
-    </div>
+    <button 
+      className="theme-toggle-button"
+      onClick={toggleTheme}
+      aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      <div className="icon-container">
+        {darkMode ? (
+          <Moon className="theme-icon" size={20} />
+        ) : (
+          <Sun className="theme-icon" size={20} />
+        )}
+      </div>
+    </button>
   );
 };
 
