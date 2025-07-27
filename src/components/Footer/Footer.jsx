@@ -11,8 +11,10 @@ const Footer = () => {
 
   return (
     <footer id="contact" className="main-footer">
-      <div className="container footer-content">
-        <h3 className="footer-title">Get In Touch</h3>
+      <div className="footer-content">
+        <h3 className="footer-title">
+          <span>Get In Touch</span>
+        </h3>
         <p>Feel free to reach out for collaborations or just a friendly chat!</p>
         
         <div className="social-links">

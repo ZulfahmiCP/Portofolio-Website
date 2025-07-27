@@ -7,18 +7,14 @@
   transition: background-color 0.3s ease;
 }
 
-.footer-title {
+.footer-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.footer-content h3 {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  color: var(--primary-accent);
-  margin-bottom: 20px;
 }
 
 .footer-content p {

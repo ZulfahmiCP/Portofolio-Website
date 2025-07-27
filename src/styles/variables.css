@@ -4,17 +4,6 @@
     rgba(118, 186, 157, 1) 0%, 
     rgba(87, 199, 133, 1) 50%, 
     rgba(118, 181, 186, 1) 100%);
-  /* --primary-gradient: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%); */
-
-    --secondary-gradient-border: linear-gradient(90deg, 
-    rgba(118, 186, 157, 1) 0%, 
-    rgba(87, 199, 133, 1) 50%, 
-    rgba(118, 181, 186, 1) 100%);
-  
-  --secondary-gradient-text: linear-gradient(90deg, 
-    rgba(118, 186, 157, 1) 0%, 
-    rgba(87, 199, 133, 1) 50%, 
-    rgba(118, 181, 186, 1) 100%);
   
   --primary-accent: #76BA9D; 
   --secondary-accent: #76B5BA;
