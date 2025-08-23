@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import '../../styles/components/about.css';
+import { useEffect } from "react";
+import "../../styles/components/about.css";
 
 const About = () => {
   useEffect(() => {
@@ -20,16 +20,23 @@ const About = () => {
               <span className="secondary-text">Competitive Programmer</span>
             </p>
             <p className="about-description">
-              A passionate university student pursuing Informatics Engineering at Hasanuddin University. 
-              I thrive on solving complex problems, whether it's uncovering insights from data or 
-              architecting efficient algorithms. My goal is to leverage technology to build 
+              A passionate university student pursuing Informatics Engineering
+              at Hasanuddin University. I thrive on solving complex problems,
+              whether it's uncovering insights from data or architecting
+              efficient algorithms. My goal is to leverage technology to build
               innovative and impactful solutions.
             </p>
             <div className="about-actions">
-              <a href="#" className="button-primary">
+              <a
+                href="https://drive.google.com/file/d/1aOGw2BksA77NcFbEeMbIUMgvfghbyAtS/view?usp=sharing"
+                className="button-primary"
+              >
                 Download CV
               </a>
-              <a href="https://github.com/ZulfahmiCP" className="button-primary">
+              <a
+                href="https://github.com/ZulfahmiCP"
+                className="button-primary"
+              >
                 Visit GitHub
               </a>
             </div>
