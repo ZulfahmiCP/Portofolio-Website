@@ -80,6 +80,29 @@
   color: var(--light-text);
 }
 
+/* Profile Image Styles */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid var(--glass-border);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-accent);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .about-wrapper {
@@ -107,11 +130,21 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
   .about-container {
     padding: 30px 20px;
     border-radius: 12px;
+  }
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
   }
 }

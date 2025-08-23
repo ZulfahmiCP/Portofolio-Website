@@ -39,6 +39,10 @@ const About = () => {
                 Visit GitHub
               </a>
             </div>
+
+            <div className="about-image">
+              <img src={`/assets/about-photo/profil-photo.jpg`} alt="Zulfahmi" className="profile-photo"/>
+            </div>
           </div>
         </div>
       </div>
