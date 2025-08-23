@@ -24,7 +24,7 @@ const projectsData = [
       "Successfully predicted participant graduation outcomes with 82% Balanced Accuracy.",
     technologies: ["Python", "K-Means", "Unsupervised"],
     tags: ["ml", "ul", "class"],
-    githubUrl: "https://www.kaggle.com/code/zhulfa/horizone-minetoday-2025",
+    githubUrl: "https://github.com/ZulfahmiCP/minetoday-horizone",
     demoUrl: "#",
   },
   {
