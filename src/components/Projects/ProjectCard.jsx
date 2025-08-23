@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="project-card" data-tags={project.tags.join(',')}>
-      <img src={`/assets/placeholder-images/${project.title}.png`} alt={`${project.title} Thumbnail`} />
+      <img src={`/assets/placeholder-images/${project.id}.png`} alt={`${project.title} Thumbnail`} />
       <div className="project-info">
         <h3>{project.title}</h3>
         <div className="project-tags">

@@ -5,17 +5,15 @@ import '../../styles/components/cp.css';
 const CompetitiveProgramming = () => {
   const [showTable, setShowTable] = useState(false);
 
-  const toggleTable = () => {
-    setShowTable(!showTable);
-  };
-
   return (
     <section id="cp" className="scroll-section">
       <div className="cp-container">
         <div className="cp-content">
           <h2 className="section-title">Competitive Programming</h2>
           <p className="cp-description">
-            I am an active competitive programmer and have authored several problems for university-level and online contests. Below is a selection of problems I've designed.
+            As an active competitive programmer, I have a deep passion for algorithmic problem-solving. 
+            This passion extends to authoring challenging and creative problems for university-level. 
+            Below is a selection of problems I've designed."
           </p>
           <button 
             onClick={() => setShowTable(!showTable)} 

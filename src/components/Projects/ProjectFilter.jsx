@@ -1,13 +1,7 @@
 import '../../styles/components/projects.css';
+import filters from '../../data/project_filters';
 
 const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
-  const filters = [
-    { id: 'all', label: 'All' },
-    { id: 'ml', label: 'Machine Learning' },
-    { id: 'viz', label: 'Data Visualization' },
-    { id: 'web', label: 'Web App' }
-  ];
-
   return (
     <div className="projects-filter-container">
        <div className="project-filters">
