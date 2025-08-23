@@ -13,6 +13,11 @@
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* gap: 60px;
+  align-items: center;
+  max-width: none; */
 }
 
 /* Update existing styles to account for new container */
@@ -89,7 +94,7 @@
 
 .profile-photo {
   width: 280px;
-  height: 280px;
+  height: 400px;
   border-radius: 20px;
   object-fit: cover;
   border: 3px solid var(--glass-border);

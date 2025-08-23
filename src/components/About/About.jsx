@@ -12,7 +12,7 @@ const About = () => {
     <section id="about">
       <div className="about-wrapper">
         <div className="about-container">
-          <div className="about-content">
+          <div className="about-text-content">
             <h1 className="about-title">ZULFAHMI</h1>
             <p className="about-subtitle">
               <span className="primary-text">Data Scientist</span>
@@ -39,10 +39,14 @@ const About = () => {
                 Visit GitHub
               </a>
             </div>
+          </div>
 
-            <div className="about-image">
-              <img src={`/assets/about-photo/profil-photo.jpg`} alt="Zulfahmi" className="profile-photo"/>
-            </div>
+          <div className="about-image">
+            <img 
+              src={`/assets/about-photo/profil-photo.jpg`} 
+              alt="Zulfahmi" 
+              className="profile-photo"
+            />
           </div>
         </div>
       </div>

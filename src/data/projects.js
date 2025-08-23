@@ -24,7 +24,7 @@ const projectsData = [
       "Successfully predicted participant graduation outcomes with 82% Balanced Accuracy.",
     technologies: ["Python", "K-Means", "Unsupervised"],
     tags: ["ml", "ul", "class"],
-    githubUrl: "#",
+    githubUrl: "https://www.kaggle.com/code/zhulfa/horizone-minetoday-2025",
     demoUrl: "#",
   },
   {
@@ -38,7 +38,8 @@ const projectsData = [
       "Achieved a final cross-validation Accuracy Score of 96.93% on the training data.",
     technologies: ["Python", "XGBoost", "Optuna"],
     tags: ["ml", "class"],
-    githubUrl: "#",
+    githubUrl:
+      "https://www.kaggle.com/code/zhulfa/predict-introverts-extroverts",
     demoUrl: "#",
   },
   {
@@ -50,7 +51,7 @@ const projectsData = [
     impact: "",
     technologies: ["React", "JavaScript", "CSS"],
     tags: ["web"],
-    githubUrl: "",
+    githubUrl: "https://github.com/ZulfahmiCP/Portofolio-Website",
     demoUrl: "#",
   },
 ];
