@@ -34,8 +34,7 @@ const projectsData = [
       "To predict a person's personality type (Introvert/Extrovert) based on behavioral data.",
     solution:
       "An XGBoost model was built with hyperparameters tuned using Optuna for accuracy.",
-    impact:
-      "Achieved a final cross-validation Accuracy Score of 96.93% on the training data.",
+    impact: "Achieved a final Accuracy Score of 96.68%.",
     technologies: ["Python", "XGBoost", "Optuna"],
     tags: ["ml", "class"],
     githubUrl:
