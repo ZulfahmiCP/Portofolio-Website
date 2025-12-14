@@ -1,3 +1,4 @@
+/* Main Header Styles */
 .main-header {
   position: fixed;
   top: 0;
@@ -9,16 +10,17 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--glass-border);
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .main-header .container {
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
+/* Logo Styles */
 .logo {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -26,6 +28,7 @@
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  z-index: 1002; /* Ensure logo stays above mobile menu */
 }
 
 .logo span {
@@ -34,24 +37,28 @@
   background-clip: text;
   color: transparent;
   display: inline-block;
-  padding-left: 4px; /* Adjust spacing as needed */
+  padding-left: 4px;
 }
 
+/* Desktop Navigation */
 .main-nav ul {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav a {
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
   cursor: pointer;
   padding: 5px 0;
+  font-size: 0.95rem;
 }
 
 .main-nav a::after {
@@ -62,17 +69,13 @@
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--secondary-accent);
+  background: var(--primary-gradient);
   transition: width 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--primary-accent);
-}
-
-.main-nav a.active {
-  background: linear-gradient(90deg, rgba(118, 186, 157, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(118, 181, 186, 1) 100%);
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -81,16 +84,9 @@
 .main-nav a:hover::after,
 .main-nav a.active::after {
   width: 100%;
-  background: var(--primary-gradient);
 }
 
-.main-nav a.active {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
+/* Theme Toggle Button */
 .theme-toggle-button {
   background: transparent;
   border: none;
@@ -99,6 +95,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
+  z-index: 1002;
 }
 
 .icon-container {
@@ -109,107 +107,110 @@
   align-items: center;
   justify-content: center;
   background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   transition: all 0.3s ease;
 }
 
 .theme-toggle-button:hover .icon-container {
-  background-color: var(--primary-accent);
+  background: var(--primary-gradient); /* Gradient bg on hover */
+  border-color: transparent;
   transform: scale(1.05);
 }
 
 .theme-toggle-button:hover .theme-icon {
-  color: var(--dark-bg);
+  color: white; /* Icon turns white on gradient */
 }
 
 .theme-icon {
   color: var(--text-color);
-  width: 20px;
-  height: 20px;
   transition: all 0.3s ease;
 }
 
-/* Ensure icons are properly aligned */
-.theme-icon svg {
-  display: block;
-}
-
-.slider {
-  background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-  border-radius: 24px;
-}
-
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: '';
-  height: 16px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
-  width: 16px;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--primary-accent);
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
-}
-
+/* Mobile Nav Toggle (Hamburger) */
 .mobile-nav-toggle {
   display: none;
+  background: none;
+  border: none;
   cursor: pointer;
-  color: var(--secondary-accent);
+  color: var(--text-color);
+  padding: 5px;
+  z-index: 1002;
 }
 
-.light-mode .btn-primary {
-  color: var(--light-text);
+/* Light Mode Overrides */
+.light-mode .main-header {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
-.light-mode .section-title {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.main-header.scrolled {
-  border-bottom: 1px solid transparent;
-  background-origin: border-box;
-  border-image: var(--primary-gradient) 1;
-}
-
+/* --- RESPONSIVE / MOBILE DESIGN --- */
 @media (max-width: 768px) {
+  /* Layout Adjustment for Mobile Header */
+  .main-header .container {
+    display: flex;
+    align-items: center;
+    /* Logo dipaksa ke kiri, elemen lain akan otomatis terdorong ke kanan */
+    justify-content: flex-end; 
+  }
+
+  /* Memaksa Logo mentok kiri */
+  .logo {
+    margin-right: auto;
+    z-index: 1002;
+  }
+  
+  /* PENGATURAN POSISI TOMBOL (Swapping Order) */
+  
+  /* 1. Theme Toggle: Geser ke urutan 2 (di sebelah kiri Hamburger) */
+  .theme-toggle-button {
+    order: 2;
+    margin-left: 0;
+    margin-right: 8px; /* Jarak SANGAT DEKAT dengan hamburger (sesuai request) */
+    z-index: 1002;
+  }
+
+  /* 2. Hamburger Menu: Geser ke urutan 3 (paling kanan) */
+  .mobile-nav-toggle {
+    display: flex; /* Pastikan flex agar icon di tengah */
+    align-items: center;
+    justify-content: center;
+    order: 3; 
+    margin-left: 0;
+    padding: 8px; /* Touch target area yang nyaman */
+    z-index: 1002;
+  }
+
+  /* MENU NAVIGASI (Hidden/Overlay) */
   .main-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--header-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 20px 0;
+    height: 100vh;
+    background-color: var(--bg-color); /* Menggunakan background solid tema */
+    padding-top: 100px; /* Space agar tidak tertutup header */
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    /* Pastikan Nav tidak mengganggu flex order header */
+    order: 4; 
   }
 
   .main-nav.active {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .main-nav ul {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 35px;
   }
 
-  .mobile-nav-toggle {
-    display: block;
+  .main-nav a {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 }

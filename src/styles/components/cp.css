@@ -16,14 +16,18 @@
 }
 
 .cp-description {
-  margin-bottom: 40px; /* Increase this value for more space */
-  line-height: 1.6; /* Optional: improves text readability */
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
+/* Button Styles specifically for CP section */
+.cp-content .button-primary {
+  margin-bottom: 30px;
+}
 
 /* Table Styles */
 .cp-table-container {
-  margin-top: 30px;
+  margin-top: 10px;
   overflow-x: auto;
 }
 
@@ -45,21 +49,21 @@
   padding: 15px;
   border-bottom: 1px solid var(--glass-border);
   color: var(--text-color);
-  vertical-align: middle;
+  vertical-align: top; /* Align top for better multiline handling */
 }
 
 /* Unified Link Styles */
 .cp-link {
   color: var(--text-color);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none; /* Clean look */
+  border-bottom: 1px dashed var(--secondary-accent); /* Custom underline */
   transition: all 0.2s ease;
   display: inline-block;
 }
 
 .cp-link:hover {
   color: var(--primary-accent);
-  text-decoration: none;
+  border-bottom-style: solid;
 }
 
 /* Tags Column */
@@ -67,67 +71,92 @@
   font-size: 0.8rem;
   background: var(--glass-bg);
   padding: 4px 8px;
-  border-radius: 10px;
+  border-radius: 6px;
   margin-right: 5px;
+  margin-bottom: 5px; /* Add margin bottom for wrapping */
   display: inline-block;
   color: var(--text-color);
+  border: 1px solid transparent;
 }
 
 /* Light Mode Adjustments */
-.light-mode {
-  &.cp-container {
-    background: var(--card-bg);
-  }
-  
-  & .cp-table td,
-  & .cp-link {
-    color: var(--light-text);
-  }
+.light-mode .cp-container {
+  background: var(--card-bg);
+}
+.light-mode .cp-table td,
+.light-mode .cp-link {
+  color: var(--light-text);
+}
+.light-mode .cp-table .tag {
+  border-color: rgba(0,0,0,0.1);
 }
 
-/* Responsive Design - Mobile */
+/* --- RESPONSIVE MOBILE VIEW --- */
 @media (max-width: 768px) {
   .cp-container {
     padding: 30px 20px;
-    border-radius: 15px;
   }
   
+  /* Make button full width and easier to tap */
+  .cp-content .button-primary {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
   .cp-table {
     display: block;
     width: 100%;
-    
-    thead {
-      display: none;
-    }
-    
-    tr {
-      display: block;
-      margin-bottom: 15px;
-      border-bottom: 2px solid var(--glass-border);
-    }
-    
-    td {
-      display: block;
-      text-align: right;
-      padding-left: 50%;
-      position: relative;
-      border-bottom: 1px dotted var(--glass-border);
-      font-size: 0.9rem;
-      
-      &::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        width: 45%;
-        padding-right: 10px;
-        font-weight: bold;
-        text-align: left;
-      }
-      
-      &:first-child {
-        font-weight: bold;
-        background: rgba(118, 181, 186, 0.1);
-      }
-    }
+  }
+  
+  .cp-table thead {
+    display: none; /* Hide headers */
+  }
+  
+  .cp-table tbody {
+    display: block;
+  }
+  
+  .cp-table tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .cp-table td {
+    display: block;
+    padding: 5px 0;
+    border: none;
+    text-align: left;
+    width: 100%;
+  }
+
+  /* Styling for Problem Name */
+  .cp-table td:nth-child(2) { 
+    /* Assumption: Child 2 is always Problem Name based on your React code */
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  /* Styling for Contest Name (Only appears on first row of group) */
+  .cp-table td[rowspan] {
+    background: var(--glass-bg);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--secondary-accent);
+    font-weight: bold;
+    order: -1; /* Ensure it stays at top */
+  }
+
+  /* Tags styling tweaks */
+  .cp-table td:last-child {
+    margin-top: 5px;
   }
 }
