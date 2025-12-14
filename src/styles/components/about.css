@@ -17,7 +17,7 @@
   /* Desktop Layout: Grid */
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px; /* Tambahkan gap agar tidak terlalu mepet di desktop */
+  gap: 40px;
   align-items: center;
 }
 
@@ -40,7 +40,7 @@
   margin-bottom: 30px;
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap; /* Safety untuk layar sempit */
+  flex-wrap: wrap;
 }
 
 .primary-text {
@@ -71,7 +71,7 @@
   gap: 20px;
 }
 
-/* Profile Image Styles */
+/* Profile Image Styles (Desktop Base) */
 .about-image {
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@
 .profile-photo {
   width: 280px;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 20px; /* INI BENTUK KOTAKNYA */
   object-fit: cover;
   border: 3px solid var(--glass-border);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -106,23 +106,21 @@
   color: var(--light-text);
 }
 
-/* --- RESPONSIVE DESIGN (MOBILE FIX) --- */
+/* --- RESPONSIVE / MOBILE FIXES --- */
 @media (max-width: 768px) {
   .about-wrapper {
     padding: 15px;
   }
   
   .about-container {
-    /* Switch to Flexbox for Mobile control */
     display: flex;
-    /* Reverse column: Image on Top, Text on Bottom */
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* Foto di atas, Teks di bawah */
     padding: 40px 20px;
     gap: 30px;
     height: auto;
   }
   
-  /* Center all text content */
+  /* Rata tengah untuk semua teks */
   .about-text-content {
     text-align: center;
     width: 100%;
@@ -133,7 +131,6 @@
     line-height: 1.2;
   }
   
-  /* Center the subtitle flex container */
   .about-subtitle {
     font-size: 1.1rem;
     justify-content: center;
@@ -145,7 +142,7 @@
     margin-bottom: 30px;
   }
   
-  /* Buttons: Stacked and Full Width */
+  /* Tombol Full Width */
   .about-actions {
     flex-direction: column;
     gap: 15px;
@@ -156,29 +153,41 @@
     width: 100%;
     text-align: center;
     justify-content: center;
+    display: block;
   }
 
-  /* Image adjustments */
+  /* PENGATURAN GAMBAR MOBILE */
   .about-image {
+    margin-bottom: 15px;
     width: 100%;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    max-width: 320px; 
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .profile-photo {
-    width: 200px;
-    height: 200px; /* Square ratio looks better on mobile profile */
-    border-radius: 50%; /* Optional: Circular profile on mobile looks modern */
-    /* Jika ingin tetap kotak, hapus border-radius: 50% di atas */
+    width: 100%;
+    height: auto; /* Biarkan tinggi menyesuaikan rasio */
+    
+    /* Paksa rasio aspek agar tetap persegi panjang vertikal */
+    aspect-ratio: 280 / 400; 
+
+    /* PENTING: Paksa border radius tetap 20px, timpa jika ada sisa style lingkaran */
+    border-radius: 20px !important; 
+    
+    object-fit: cover;
   }
 }
 
+/* Penyesuaian untuk layar yang sangat kecil */
 @media (max-width: 480px) {
   .about-container {
     padding: 30px 20px;
   }
 
-  .profile-photo {
-    width: 160px;
-    height: 160px;
+  .about-image {
+    max-width: 260px;
   }
 }
