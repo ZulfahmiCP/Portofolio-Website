@@ -1,31 +1,30 @@
 :root {
   /* Update your color variables */
-  --primary-gradient: linear-gradient(90deg, 
-    rgba(118, 186, 157, 1) 0%, 
-    rgba(87, 199, 133, 1) 50%, 
-    rgba(118, 181, 186, 1) 100%);
-  --primary-accent: rgba(43, 245, 152);
-  --secondary-accent: rgba(7, 174, 234);
-  --primary-gradient: linear-gradient(90deg, var(--primary-accent) 0.000%, var(--secondary-accent) 100.000%);
-  
+  --primary-accent: #00C16E; 
+  --secondary-accent: #3B82F6;
+  --primary-gradient: linear-gradient(135deg, #00C16E 0%, #02A189 100%); 
   
   /* Update glow effects to use first gradient color */
-  --glow-color: rgba(43, 245, 152, 0.4);
-  --secondary-glow-color: rgba(7, 174, 234, 0.5);
+  --glow-color: rgba(0, 193, 110, 0.15); 
+  --secondary-glow-color: rgba(59, 130, 246, 0.15);
   
   /* Rest of your variables remain the same */
-  --dark-bg: #111317;
-  --light-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --dark-text: #EAEAEA;
-  --light-text: #1a202c;
-  --card-bg: #1a1c20;
-  --font-heading: 'Orbitron', sans-serif;
+  --dark-bg: #0F1115;
+  --card-bg: #161B22;
+  --light-bg: #F8FAFC;
+
+  --glass-bg: rgba(255, 255, 255, 0.03); 
+  --glass-border: rgba(255, 255, 255, 0.06);
+
+  --dark-text: #F1F5F9; 
+  --light-text: #1E293B;
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Poppins', sans-serif;
+
   --bg-color: var(--dark-bg);
   --text-color: var(--dark-text);
-  --header-bg: rgba(17, 19, 23, 0.8);
+  --header-bg: rgba(15, 17, 21, 0.85);
 }
 
 /* Light Mode Overrides */
@@ -33,7 +32,11 @@ body.light-mode {
   --bg-color: var(--light-bg);
   --text-color: var(--light-text);
   --card-bg: #F7F7F7;
-  --glass-bg: rgba(0, 0, 0, 0.05);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --header-bg: rgba(255, 255, 255, 0.7);
+
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --header-bg: rgba(255, 255, 255, 0.9);
+
+  --primary-accent: #00A15C;
+  --glow-color: rgba(0, 161, 92, 0.1);
 }
