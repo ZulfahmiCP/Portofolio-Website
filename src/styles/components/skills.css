@@ -14,50 +14,80 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  height: 100%; /* Ensure equal height */
 }
 
-.skill-category:hover {
-  transform: scale(1.05);
-  border-color: transparent;
-  background: linear-gradient(
-    var(--card-bg), 
-    var(--card-bg)
-  ), 
-  var(--primary-gradient);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+/* Hover effect only for non-touch devices (Desktop) */
+@media (hover: hover) {
+  .skill-category:hover {
+    transform: scale(1.05);
+    border-color: transparent;
+    background: linear-gradient(
+      var(--card-bg), 
+      var(--card-bg)
+    ), 
+    var(--primary-gradient);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .skill-category:hover .skill-list i {
+    color: var(--secondary-accent);
+  }
 }
 
 .skill-category h3 {
   font-family: var(--font-heading);
   margin-bottom: 20px;
   text-align: center;
+  font-size: 1.25rem; /* Slightly smaller for balance */
 }
 
 .skill-list {
   list-style: none;
-  padding-left: 10px;
+  padding-left: 0; /* Remove default padding */
 }
 
 .skill-list li {
-  padding: 10px 0;
+  padding: 8px 0;
   font-weight: 300;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  font-size: 0.95rem;
 }
 
 .skill-list i {
   color: var(--primary-accent);
   transition: color 0.3s ease;
+  min-width: 20px; /* Ensure icon alignment */
 }
 
-.skill-category:hover .skill-list i {
-  color: var(--secondary-accent);
-}
-
-/* Responsive Design */
+/* --- RESPONSIVE MOBILE VIEW --- */
 @media (max-width: 768px) {
+  .skills-container {
+    /* Gunakan 2 kolom di mobile untuk menghemat scroll space */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+
+  .skill-category {
+    padding: 20px 15px; /* Kurangi padding agar muat 2 kolom */
+  }
+
+  .skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .skill-list li {
+    font-size: 0.85rem; /* Text sedikit lebih kecil */
+    gap: 8px;
+  }
+}
+
+/* Untuk layar sangat kecil (iPhone SE dsb), kembali ke 1 kolom */
+@media (max-width: 360px) {
   .skills-container {
     grid-template-columns: 1fr;
   }
