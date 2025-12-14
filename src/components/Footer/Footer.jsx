@@ -1,14 +1,7 @@
-import { useEffect } from 'react';
 import '../../styles/components/footer.css';
+import { Mail, Linkedin, Github, Phone } from 'lucide-react';
 
 const Footer = () => {
-  useEffect(() => {
-    // Initialize Lucide icons
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-  }, []);
-
   return (
     <footer id="contact" className="main-footer">
       <div className="footer-content">
@@ -19,7 +12,7 @@ const Footer = () => {
         
         <div className="social-links">
           <a href="mailto:zulfahmi1612@gmail.com" title="Email">
-            <i data-lucide="mail"></i>
+            <Mail />
           </a>
           <a 
             href="https://www.linkedin.com/in/zul-fahmi-75b37828b" 
@@ -27,7 +20,7 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="LinkedIn"
           >
-            <i data-lucide="linkedin"></i>
+            <Linkedin />
           </a>
           <a 
             href="https://github.com/ZulfahmiCP" 
@@ -35,7 +28,7 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="GitHub"
           >
-            <i data-lucide="github"></i>
+            <Github />
           </a>
           <a 
             href="http://wa.me/+6282239635621" 
@@ -43,13 +36,13 @@ const Footer = () => {
             rel="noopener noreferrer" 
             title="WhatsApp"
           >
-            <i data-lucide="phone"></i>
+            <Phone />
           </a>
         </div>
         
-        <p className="copyright">
-          © {new Date().getFullYear()} ZULFAHMI. Designed with a futuristic touch.
-        </p>
+        <span className="copyright">
+          © {new Date().getFullYear()} ZULFAHMI. Engineered for Impact.
+        </span>
       </div>
     </footer>
   );

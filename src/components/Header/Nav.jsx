@@ -1,15 +1,7 @@
 import { Link } from 'react-scroll';
-import { useEffect } from 'react';
 import '../../styles/components/header.css';
 
 const Nav = ({ mobileNavOpen, toggleMobileNav }) => {
-  useEffect(() => {
-    // Initialize Lucide icons when component mounts
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-  }, []);
-
   return (
     <nav className={`main-nav ${mobileNavOpen ? 'active' : ''}`}>
       <ul>

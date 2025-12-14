@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'; 
 import ProjectCard from './ProjectCard';
 import ProjectFilter from './ProjectFilter';
 import projectsData from '../../data/projects';
@@ -22,26 +23,39 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="scroll-section">
+    <section id="projects" className="scroll-section visible"> 
       <div className="container">
-        <h2 className="section-title">Projects</h2>
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          Projects
+        </motion.h2>
         
         <ProjectFilter 
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
         />
 
-        <div className="projects-grid">
-          {projectsToShow.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <motion.div 
+          className="projects-grid"
+          layout 
+        >
+          <AnimatePresence>
+            {projectsToShow.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-        {filteredProjects.length > visibleProjects && (
+        {filteredProjects.length > 3 && (
           <div className="show-more-container">
             <button 
               onClick={toggleShowMore}
-              className={`button-primary ${isExpanded ? 'sticky' : ''}`}
+              className={`show-more-button ${isExpanded ? 'sticky' : ''}`}
             >
               {isExpanded ? 'Show Less' : 'Show More'}
             </button>

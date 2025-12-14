@@ -1,27 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react'; // Import specific icons
+import { Moon, Sun } from 'lucide-react'; 
 import '../../styles/components/header.css';
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // Initialize theme immediately to prevent flash
     const savedTheme = localStorage.getItem('theme') || 
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark-mode' : 'light-mode');
     
-    // Apply theme before React hydrates
     document.body.classList.toggle('light-mode', savedTheme === 'light-mode');
     setDarkMode(savedTheme === 'dark-mode');
-    
-    // Initialize Lucide after slight delay
-    const timer = setTimeout(() => {
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
-    }, 10);
-    
-    return () => clearTimeout(timer);
   }, []);
 
   const toggleTheme = () => {
