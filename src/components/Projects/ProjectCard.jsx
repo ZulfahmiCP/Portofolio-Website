@@ -1,17 +1,28 @@
-import { useEffect } from 'react';
 import '../../styles/components/projects.css';
+import { Github, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ProjectCard = ({ project }) => {
-  useEffect(() => {
-    // Initialize Lucide icons
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-  }, []);
-
   return (
-    <div className="project-card" data-tags={project.tags.join(',')}>
-      <img src={`/assets/placeholder-images/${project.id}.png`} alt={`${project.title} Thumbnail`} />
+    <motion.div 
+      className="project-card" 
+      data-tags={project.tags.join(',')}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      viewport={{ once: true }}
+    >
+      <div className="card-image-container">
+         <img 
+           src={`/assets/placeholder-images/${project.id}.png`} 
+           alt={`${project.title} Thumbnail`}
+           onError={(e) => {
+             e.target.onerror = null; 
+             e.target.src = "https://placehold.co/600x400/161B22/00C16E?text=Project+Image"; 
+           }} 
+        />
+      </div>
+
       <div className="project-info">
         <h3>{project.title}</h3>
         <div className="project-tags">
@@ -33,7 +44,7 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer" 
               className="project-link"
             >
-              <i data-lucide="github"></i> GitHub
+              <Github size={16} /> GitHub
             </a>
             <a 
               href={project.demoUrl} 
@@ -41,11 +52,11 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer" 
               className="project-link"
             >
-              <i data-lucide="external-link"></i> Live Demo
+              <ExternalLink size={16} /> Live Demo
             </a>
           </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

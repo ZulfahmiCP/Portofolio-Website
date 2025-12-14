@@ -3,6 +3,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import Nav from './Nav';
 import ThemeToggle from './ThemeToggle';
 import '../../styles/components/header.css';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,7 @@ const Header = () => {
           onClick={toggleMobileNav}
           aria-label="Toggle navigation"
         >
-          <i data-lucide="menu"></i>
+          {mobileNavOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         
         <Nav mobileNavOpen={mobileNavOpen} toggleMobileNav={toggleMobileNav} />
