@@ -13,14 +13,15 @@
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  
+  /* Desktop Layout: Grid */
   display: grid;
   grid-template-columns: 2fr 1fr;
-  /* gap: 60px;
+  gap: 40px; /* Tambahkan gap agar tidak terlalu mepet di desktop */
   align-items: center;
-  max-width: none; */
 }
 
-/* Update existing styles to account for new container */
+/* About Text Content */
 .about-content {
   max-width: 800px;
   margin: 0;
@@ -39,6 +40,7 @@
   margin-bottom: 30px;
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap; /* Safety untuk layar sempit */
 }
 
 .primary-text {
@@ -63,26 +65,10 @@
   color: var(--text-color);
 }
 
-/* Button Styles */
+/* Button Container */
 .about-actions {
   display: flex;
   gap: 20px;
-}
-
-/* Light Mode Adjustments */
-.light-mode .about-container {
-  background: var(--card-bg);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.light-mode .about-title,
-.light-mode .about-description,
-.light-mode .separator {
-  color: var(--light-text);
-}
-
-.light-mode .about-button {
-  color: var(--light-text);
 }
 
 /* Profile Image Styles */
@@ -108,48 +94,91 @@
   border-color: var(--primary-accent);
 }
 
-/* Responsive Design */
+/* Light Mode Adjustments */
+.light-mode .about-container {
+  background: var(--card-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .about-title,
+.light-mode .about-description,
+.light-mode .separator {
+  color: var(--light-text);
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE FIX) --- */
 @media (max-width: 768px) {
   .about-wrapper {
     padding: 15px;
   }
   
   .about-container {
-    padding: 40px 30px;
-    border-radius: 15px;
-  }
-  .about-container {
-    padding: 70px 20px;
+    /* Switch to Flexbox for Mobile control */
+    display: flex;
+    /* Reverse column: Image on Top, Text on Bottom */
+    flex-direction: column-reverse;
+    padding: 40px 20px;
+    gap: 30px;
+    height: auto;
   }
   
+  /* Center all text content */
+  .about-text-content {
+    text-align: center;
+    width: 100%;
+  }
+
   .about-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
   }
   
+  /* Center the subtitle flex container */
   .about-subtitle {
-    font-size: 1.2rem;
-    flex-wrap: wrap;
+    font-size: 1.1rem;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   
+  .about-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Buttons: Stacked and Full Width */
   .about-actions {
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+  }
+
+  .about-actions .button-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Image adjustments */
+  .about-image {
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .profile-photo {
     width: 200px;
-    height: 200px;
+    height: 200px; /* Square ratio looks better on mobile profile */
+    border-radius: 50%; /* Optional: Circular profile on mobile looks modern */
+    /* Jika ingin tetap kotak, hapus border-radius: 50% di atas */
   }
 }
 
 @media (max-width: 480px) {
   .about-container {
     padding: 30px 20px;
-    border-radius: 12px;
   }
 
   .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 }
