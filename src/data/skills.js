@@ -3,27 +3,46 @@ const skillsData = [
     id: 1,
     name: "Languages",
     skills: [
-      { name: "Python", icon: "code-2" },
-      { name: "C++", icon: "code-2" },
-      { name: "JavaScript", icon: "code" }
+      { name: "Python", icon: "python" },
+      { name: "C++", icon: "cpp" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "MySQL", icon: "mysql" },
     ]
   },
   {
     id: 2,
-    name: "Data Tools",
+    name: "AI & Data Science",
     skills: [
-      { name: "Pandas & NumPy", icon: "bar-chart-3" },
-      { name: "Scikit-learn", icon: "brain-circuit" },
-      { name: "Matplotlib & Seaborn", icon: "area-chart" }
+      { name: "HuggingFace", icon: "huggingface" },
+      { name: "TensorFlow", icon: "tensorflow" },
+      { name: "PyTorch", icon: "pytorch" },
+      { name: "Pandas", icon: "pandas" },
+      { name: "Scikit-learn", icon: "scikit" },
+      { name: "Matplotlib", icon: "matplotlib" } 
     ]
   },
   {
     id: 3,
-    name: "Frameworks",
+    name: "Development & Frameworks",
     skills: [
-      { name: "TensorFlow & Keras", icon: "brain" },
-      { name: "PyTorch", icon: "brain-cog" },
-      { name: "React", icon: "atom" }
+      { name: "FastAPI", icon: "fastapi" },
+      { name: "Streamlit", icon: "streamlit" },
+      { name: "React", icon: "react" },
+      { name: "Firebase", icon: "firebase" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Flutter", icon: "flutter" },
+    ]
+  },
+  {
+    id: 4,
+    name: "Tools & Design",
+    skills: [
+      { name: "Git", icon: "git" },
+      { name: "Github", icon: "github" },
+      { name: "VS Code", icon: "vscode"},
+      { name: "Figma", icon: "figma" },
+      { name: "Canva", icon: "canva" },
     ]
   }
 ];
