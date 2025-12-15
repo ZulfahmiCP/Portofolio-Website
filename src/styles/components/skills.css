@@ -1,94 +1,114 @@
-/* Skills Section */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-content: center;
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; 
 }
 
-.skill-category {
-  background: var(--card-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 15px;
-  padding: 30px;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  height: 100%; /* Ensure equal height */
-}
-
-/* Hover effect only for non-touch devices (Desktop) */
-@media (hover: hover) {
-  .skill-category:hover {
-    transform: scale(1.05);
-    border-color: transparent;
-    background: linear-gradient(
-      var(--card-bg), 
-      var(--card-bg)
-    ), 
-    var(--primary-gradient);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
-
-  .skill-category:hover .skill-list i {
-    color: var(--secondary-accent);
-  }
-}
-
-.skill-category h3 {
+.category-title {
   font-family: var(--font-heading);
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary-accent);
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: grid;
+  /* Responsif: Kolom otomatis menyesuaikan lebar (minimal 100px) */
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 30px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 1.25rem; /* Slightly smaller for balance */
+  gap: 12px;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.skill-list {
-  list-style: none;
-  padding-left: 0; /* Remove default padding */
-}
-
-.skill-list li {
-  padding: 8px 0;
-  font-weight: 300;
+.icon-box {
+  font-size: 2.5rem; 
+  color: var(--text-color); 
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
+  justify-content: center;
+  height: 60px; 
 }
 
-.skill-list i {
+.skill-name {
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: 500;
+}
+
+/* Hover Effects */
+.skill-item:hover .icon-box {
+  opacity: 1;
+  transform: scale(1.1);
+  color: var(--primary-accent); 
+  filter: drop-shadow(0 0 8px var(--glow-color));
+}
+
+.skill-item:hover .skill-name {
+  opacity: 1;
   color: var(--primary-accent);
-  transition: color 0.3s ease;
-  min-width: 20px; /* Ensure icon alignment */
 }
 
-/* --- RESPONSIVE MOBILE VIEW --- */
+.light-mode .category-title {
+  color: var(--light-text);
+}
+
+.light-mode .icon-box,
+.light-mode .skill-name {
+  color: var(--light-text);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .skills-container {
-    /* Gunakan 2 kolom di mobile untuk menghemat scroll space */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px;
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
   }
-
-  .skill-category {
-    padding: 20px 15px; /* Kurangi padding agar muat 2 kolom */
+  
+  .icon-box {
+    font-size: 2rem;
+    height: 50px;
   }
-
-  .skill-category h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+  
+  .skill-name {
+    font-size: 0.8rem;
   }
-
-  .skill-list li {
-    font-size: 0.85rem; /* Text sedikit lebih kecil */
-    gap: 8px;
+  
+  .category-title {
+    font-size: 1.3rem;
   }
 }
 
-/* Untuk layar sangat kecil (iPhone SE dsb), kembali ke 1 kolom */
-@media (max-width: 360px) {
-  .skills-container {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
   }
 }
