@@ -6,18 +6,16 @@ const projectsData = [
       "The massive volume of legal documents (300k+ in 3 months) makes manual analysis of verdict trends difficult for practitioners.",
     solution: 
       "Engineered an NLP pipeline to clean and tokenize massive text datasets. Built an LSTM model integrated with LIME (Explainable AI) to highlight which keywords drove the model's prediction.",
-      // "Built an LSTM model with NLP to extract legal narratives and predict prison sentence lengths, using Explainable AI for transparency.",
     impact: 
       "Reduced analysis time by 90% while ensuring transparency—a critical factor for safe and trusted AI adoption in sensitive sectors.",
-      // "Enabled automated, interpretable analysis of sentencing trends from massive legal datasets.",
     technologies: ["Python", "TensorFlow", "NLP", "LIME"],
     tags: ["ml", "nlp", "xai"],
-    githubUrl: "https://www.kaggle.com/code/zhulfa/explainable-lstm-of-indonesian-criminal-sentences",
+    githubUrl: "https://github.com/ZulfahmiCP/Explainable-AI-Driven-Analysis-of-Indonesian-Criminal-Sentences-Using-LSTM",
     demoUrl: "#"
   },
   {
     id: 2,
-    title: "Electric Demand Forecasting",
+    title: "National Electric Demand Forecasting",
     problem:
       "Utility companies face significant losses due to inefficient energy distribution caused by inaccurate demand forecasting.",
     solution:
